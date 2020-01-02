@@ -1,0 +1,9 @@
+data/train/images1024/*.png
+data/train/labels1024/*.json
+data/train/targets1024/*.png
+data/test/images/*.png
+results/vizpredictions/*.png
+results/predictions/*.png
+workspace/loc/lightning_logs
+workspace/damage/lightning_logs
+__pycache__
