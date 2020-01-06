@@ -4,6 +4,7 @@ import numpy as np
 import cv2
 from shapely import wkt
 from tqdm import tqdm
+import shutil
 
 
 def shrinkpolygon(polygon, border=2):
@@ -130,6 +131,19 @@ def prepostjson2img(prefilename):
     return precount, postcount
 
 
+def moveempty(prefn, prelabelsfn):
+    postfn = prefn.replace("pre", "post")
+    postlabelsfn = prelabelsfn.replace("pre", "post")
+    emptyprefn = prefn.replace("images1024", "emptyimages1024")
+    emptypostfn = postfn.replace("images1024", "emptyimages1024")
+    emptyprelabelsfn = prelabelsfn.replace("labels1024", "emptylabels1024")
+    emptypostlabelsfn = postlabelsfn.replace("labels1024", "emptylabels1024")
+    shutil.move(prefn, emptyprefn)
+    shutil.move(postfn, emptypostfn)
+    shutil.move(prelabelsfn, emptyprelabelsfn)
+    shutil.move(postlabelsfn, emptypostlabelsfn)
+
+
 if __name__ == "__main__":
     pattern = "data/train/images1024/*pre*"
     emptyimages = []
@@ -139,7 +153,8 @@ if __name__ == "__main__":
         )
         precount, postcount = prepostjson2img(fn)
         if not precount or not postcount:
-            emptyimages.append(fn)
+            emptyimages.append(fn + "\n")
+            moveempty(f,fn) 
 
     with open("data/train/emptyimages.txt", "w") as f:
         f.writelines(emptyimages)

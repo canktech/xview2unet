@@ -51,7 +51,6 @@ class DamageNet(nn.Module):
         # torch.Size([1, 64, 512, 512]) torch.Size([1, 32, 256, 256]) torch.Size([1, 48, 128, 128]) torch.Size([1, 80, 64, 64]) torch.Size([1, 80, 32, 32]) torch.Size([1, 112, 16, 16]) torch.Size([1, 192, 8, 8]) torch.Size([1, 320, 4, 4])
         # channels in each stage representation 64, 32, 48, 80, 80, 112, 192, 320
         return stage7, stage6, stage5, stage4, stage3, stage2, stage1, stage0
-        return stages
 
 
 def ConvNormAct(in_channels, out_channels, ksize=3):

@@ -1,5 +1,7 @@
 data/train/images1024/*.png
+data/train/emptyimages1024/*.png
 data/train/labels1024/*.json
+data/train/emptylabels1024/*.json
 data/train/targets1024/*.png
 data/test/images/*.png
 results/vizpredictions/*.png

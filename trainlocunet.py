@@ -159,8 +159,7 @@ class XViewLocSystem(pl.LightningModule):
         return {"val_loss": avgloss, "log": {"val_loss": avgloss}}
 
     def configure_optimizers(self):
-        return torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
-        return torch.optim.Adam(self.parameters(), lr=0.001)
+        return torch.optim.SGD(self.parameters(), lr=0.01, momentum=0.9)
 
     @pl.data_loader
     def train_dataloader(self):
@@ -198,8 +197,8 @@ if __name__ == "__main__":
     trainer = pl.Trainer(
         default_save_path="workspace/loc",
         check_val_every_n_epoch=5,
-        min_nb_epochs=180,
-        max_nb_epochs=180,
+        min_nb_epochs=90,
+        max_nb_epochs=90,
         gpus=1,
         use_amp=True,
     )

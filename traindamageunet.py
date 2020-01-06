@@ -171,7 +171,7 @@ class XViewSystem(pl.LightningModule):
         return {"val_loss": avgloss, "log": {"val_loss": avgloss}}
 
     def configure_optimizers(self):
-        return torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+        return torch.optim.SGD(self.parameters(), lr=0.01, momentum=0.9)
 
     @pl.data_loader
     def train_dataloader(self):

@@ -135,7 +135,7 @@ if __name__ == "__main__":
             print(phist, pcounts, color)
             outblank[pblank > 0] = color
 
-        dmg[outblank > 0] = outblank[outblank > 0]
+        # dmg[outblank > 0] = outblank[outblank > 0]
 
         loc = cv2.dilate(loc, kernel, iterations=2)
         cv2.imwrite(locfn, loc)

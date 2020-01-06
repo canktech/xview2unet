@@ -1,5 +1,5 @@
 torch==1.3.1
-pytorch_toolbelt.egg==0.2.2
+pytorch_toolbelt==0.2.1
 opencv_python_headless==4.1.2.30
 timm==0.1.14
 tqdm==4.35.0

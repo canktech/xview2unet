@@ -1,5 +1,5 @@
 ### AI FOR HUMANITARIAN ASSISTANCE AND DISASTER RELIEF 
-### SEGMENTATION AND CLASSIFICATION OF BUILDING DAMAGE 
+### INSTANCE SEGMENTATION AND CLASSIFICATION OF BUILDING DAMAGE 
 
 ### OPENSOURCE XVIEW2 SUBMISSION USING MODIFIED UNET (MORE STAGES AND PAIRED IMAGE INPUTS) 
 
@@ -23,25 +23,29 @@ data
 
 ### INSTRUCTIONS 
 
+For fp16 training using Volta or Turing GPU install Nvidia apex python only version from https://github.com/NVIDIA/apex . (Note the automatically applied dynamic loss scaling feature may help with stability of training) 
+
 You may need to modify batch sizes in ```trainlocunet.py``` and ```traindamgeunet.py```
 
 ```bash
-pip install requirements.txt 
+pip install -r requirements.txt 
 python preprocess.py
 python trainlocunet.py
 python traindamageunet.py
-tree workspace # to see your commits
+tree workspace # to see your checkpoints and tensorboard logs 
 python testdamage.py
 ```
 
 Results will be in 
 ```bash
 results
-├── predictions
-└── vizpredictions
+├── predictions          # pixel values in range (0-1) or (0-4) valid for submission (zip this folder for submission) 
+└── vizpredictions       # pixel values in range (0-255) for easy viewing
 ```
 
 ### Score
 Just missed out on top 50 leaderboard despite joining the competition very late and only made submissions on last day
 
 (weighted overall, loc, dmg)  .68 / .78 / .63
+
+Feel free to experiment with the code and post issues.
