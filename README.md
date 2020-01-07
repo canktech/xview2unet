@@ -1,7 +1,11 @@
 ### AI FOR HUMANITARIAN ASSISTANCE AND DISASTER RELIEF 
-### INSTANCE SEGMENTATION AND CLASSIFICATION OF BUILDING DAMAGE 
+### INSTANCE SEGMENTATION AND CLASSIFICATION OF BUILDING DAMAGE USING PAIR OF PRE AND POST DISASTER IMAGES
+
+<img src="docs/imgs/xview2unet.png" width="100%" />
 
 ### OPENSOURCE XVIEW2 SUBMISSION USING MODIFIED UNET (MORE STAGES AND PAIRED IMAGE INPUTS) 
+
+<img src="docs/imgs/damageunet.png" width="100%" /> 
 
 ### TESTED ON UBUNTU 18.04, PYTHON 3.7.5, USING RTX GPU WITH HIGH VRAM
 
@@ -44,7 +48,7 @@ results
 ```
 
 ### Score
-Just missed out on top 50 leaderboard despite joining the competition very late and only made submissions on last day
+Just missed out on top 50 leaderboard despite joining the competition very late and entering submissions on last day only
 
 (weighted overall, loc, dmg)  .68 / .78 / .63
 
