@@ -3,6 +3,10 @@
 
 <img src="docs/imgs/xview2unet.png" width="100%" />
 
+### IMPLICIT CLASSIFICATION OF NON LABELLED AREAS (VEGETATION)
+
+<img src="docs/imgs/xview2unet172.png" width="100%" />
+
 ### OPENSOURCE XVIEW2 SUBMISSION USING MODIFIED UNET (MORE STAGES AND PAIRED IMAGE INPUTS) 
 
 <img src="docs/imgs/damageunet.png" width="100%" /> 
